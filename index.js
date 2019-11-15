@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const server = require('./server')
-const port = process.env.PORT || 4400
+const port = require('./config').port
 
 
 server.listen(port, () => {
