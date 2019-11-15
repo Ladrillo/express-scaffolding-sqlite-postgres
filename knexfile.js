@@ -1,3 +1,5 @@
+const dbURL = require('./config/index').pgdburl
+
 module.exports = {
   development: {
     client: 'sqlite3',
@@ -38,18 +40,17 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password'
-    },
+    client: 'pg',
+    connection: dbURL,
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
   }
 }
