@@ -1,8 +1,8 @@
 
 exports.seed = function(knex) {
-  return knex('table_name').truncate()
+  return knex('roles').truncate()
     .then(function () {
-      return knex('table_name').insert([
+      return knex('roles').insert([
         { name: 'student'},
         { name: 'instructor'},
         { name: 'teamLead'}
