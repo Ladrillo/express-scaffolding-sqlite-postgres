@@ -17,4 +17,9 @@ app.get('/api/users', async (req, res) => {
   res.json(users)
 })
 
+app.get('/api/roles', async (req, res) => {
+  const roles = await db('roles')
+  res.json(roles)
+})
+
 module.exports = app
