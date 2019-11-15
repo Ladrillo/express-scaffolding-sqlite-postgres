@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "jest",
-    "postinstall": "heroku run knex migrate:latest"
+    "postinstall": "heroku run knex migrate:latest -a express-scaffolding-sqlite-pos"
   },
   "keywords": [],
   "author": "",
