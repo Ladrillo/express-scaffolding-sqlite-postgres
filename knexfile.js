@@ -18,10 +18,10 @@ module.exports = {
     },
   },
 
-  production: {
+  testing: {
     client: 'sqlite3',
     connection: {
-      filename: './database/development.db3'
+      filename: './database/testing.db3'
     },
     useNullAsDefault: true,
     pool: {
@@ -37,19 +37,19 @@ module.exports = {
     },
   },
 
-  // production: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user: 'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
-  // }
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'my_db',
+      user: 'username',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
 };
