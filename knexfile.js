@@ -21,7 +21,7 @@ module.exports = {
   production: {
     client: 'sqlite3',
     connection: {
-      filename: './database/testing.db3'
+      filename: './database/development.db3'
     },
     useNullAsDefault: true,
     pool: {
