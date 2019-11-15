@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "heroku run knex migrate:latest"
   },
   "keywords": [],
   "author": "",
