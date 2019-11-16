@@ -2,14 +2,15 @@ const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
 const db = require('./database/dbConfig')
+const origin = require('./config/index').origin
 const app = express()
 
-// var corsOptions = {
-//   origin: 'http://localhost:3000',
-// }
+var corsOptions = {
+  origin
+}
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(helmet())
 
 app.get('/api', (req, res) => {
