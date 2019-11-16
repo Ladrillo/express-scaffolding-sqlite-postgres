@@ -2,20 +2,21 @@ const express = require('express')
 const cors = require('cors')
 const helmet = require('helmet')
 const db = require('./database/dbConfig')
-const origin = require('./config/index').origin
-const secure = require('./config/index').secureCookie
+const { secure, origin, domain } = require('./config/index')
+
 const app = express()
 
 var corsOptions = {
-  origin,
+  origin, // array of admissible origins
   credentials: true,
 }
 
 const cookieConfig = {
   maxAge: 900000,
-  httpOnly: false, // should be true to defend against XSS
+  httpOnly: false, // if the frontend js needs access to cookie
   sameSite: 'None',
-  secure
+  secure,
+  domain,
 }
 
 const lastEndpointUsed = last => (_, res, next) => {
