@@ -14,8 +14,8 @@ var corsOptions = {
 const cookieConfig = {
   maxAge: 900000,
   httpOnly: false, // should be true to defend against XSS
-  // sameSite: 'None',
-  // secure
+  sameSite: 'None',
+  secure
 }
 
 const lastEndpointUsed = last => (_, res, next) => {
