@@ -9,18 +9,18 @@ app.use(cors())
 app.use(helmet())
 
 app.get('/api', (req, res) => {
-  res.cookie('lastEndpoint', '/')
+  res.cookie('lastEndpoint', '/', { maxAge: 900000, httpOnly: false })
   res.json({ server: 'up' })
 })
 
 app.get('/api/users', async (req, res) => {
-  res.cookie('lastEndpoint', '/users')
+  res.cookie('lastEndpoint', '/users', { maxAge: 900000, httpOnly: false })
   const users = await db('users')
   res.json(users)
 })
 
 app.get('/api/roles', async (req, res) => {
-  res.cookie('lastEndpoint', '/roles')
+  res.cookie('lastEndpoint', '/roles', { maxAge: 900000, httpOnly: false })
   const roles = await db('roles')
   res.json(roles)
 })
