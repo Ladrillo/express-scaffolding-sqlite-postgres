@@ -6,7 +6,8 @@ const origin = require('./config/index').origin
 const app = express()
 
 var corsOptions = {
-  origin
+  origin,
+  credentials: true,
 }
 
 app.use(express.json())
