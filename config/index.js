@@ -4,5 +4,8 @@ module.exports = {
   pgdburl: process.env.DATABASE_URL,
   origin: process.env.NODE_ENV === 'production'
     ? 'https://cookies-liart-five.now.sh'
-    : 'http://localhost:3000'
+    : 'http://localhost:3000',
+  secureCookie: process.env.NODE_ENV === 'production'
+    ? true
+    : false
 }
