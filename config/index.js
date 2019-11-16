@@ -1,11 +1,16 @@
+const env = process.env.NODE_ENV || 'development'
+const isProduction = env === 'production'
+const port = process.env.PORT || 4400
+
 module.exports = {
-  env: process.env.NODE_ENV || 'development',
-  port: process.env.PORT || 4400,
-  pgdburl: process.env.DATABASE_URL,
-  origin: process.env.NODE_ENV === 'production'
-    ? 'https://cookies-liart-five.now.sh'
-    : 'http://localhost:3000',
-  secureCookie: process.env.NODE_ENV === 'production'
+  env,
+  port,
+  pgdburl: process.env.DATABASE_URL, // postgres (see Luis video)
+  // origin: isProduction // for cookies to work cross origin we can't enable CORS for '*'
+  //   ? 'https://cookies-liart-five.now.sh'
+  //   : 'http://localhost:3000',
+  origin: ['https://cookies-liart-five.now.sh', 'http://localhost:3000'],
+  secureCookie: isProduction // over https only?
     ? true
-    : false
+    : false,
 }
