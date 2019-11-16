@@ -11,6 +11,6 @@ module.exports = {
   origin: ['https://cookies-liart-five.now.sh', 'http://localhost:3000'],
   secure: isProduction, // cookie only sent over https
   domain: isProduction
-    ? 'herokuapp.com'
-    : 'express-scaffolding-sqlite-pos.herokuapp.com'
+    ? 'express-scaffolding-sqlite-pos.herokuapp.com'
+    : 'localhost'
 }
