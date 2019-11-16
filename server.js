@@ -15,7 +15,12 @@ app.use(cors(corsOptions))
 app.use(helmet())
 
 app.get('/api', (req, res) => {
-  res.cookie('lastEndpoint', '/', { maxAge: 900000, httpOnly: false })
+  res.cookie('lastEndpoint', '/', {
+    maxAge: 900000,
+    httpOnly: false,
+    sameSite: false,
+    secure: true
+  })
   res.json({ server: 'up' })
 })
 
