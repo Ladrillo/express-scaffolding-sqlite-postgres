@@ -14,8 +14,8 @@ var corsOptions = {
 const cookieConfig = {
   maxAge: 900000,
   httpOnly: false, // should be true to defend from XSS
-  sameSite: 'None',
-  secure: true,
+  sameSite: false,
+  secure
 }
 
 app.use(express.json())
