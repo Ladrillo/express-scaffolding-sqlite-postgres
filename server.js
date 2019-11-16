@@ -19,8 +19,8 @@ const cookieConfig = {
   domain,
 }
 
-const lastEndpointUsed = last => (_, res, next) => {
-  res.cookie('lastEndpoint', last, cookieConfig)
+const lastEndpointUsed = (last, path) => (_, res, next) => {
+  res.cookie('lastEndpoint', last, { ...cookieConfig, path })
   next()
 }
 
@@ -28,16 +28,16 @@ app.use(helmet())
 app.use(express.json())
 app.use(cors(corsOptions))
 
-app.get('/api', lastEndpointUsed('api'), (_, res) => {
+app.get('/api', lastEndpointUsed('api', '/api'), (_, res) => {
   res.json({ server: 'up' })
 })
 
-app.get('/api/users', lastEndpointUsed('api-users'), async (_, res) => {
+app.get('/api/users', lastEndpointUsed('api-users', '/api/users'), async (_, res) => {
   const users = await db('users')
   res.json(users)
 })
 
-app.get('/api/roles', lastEndpointUsed('api-roles'), async (_, res) => {
+app.get('/api/roles', lastEndpointUsed('api-roles', '/api/roles'), async (_, res) => {
   const roles = await db('roles')
   res.json(roles)
 })
