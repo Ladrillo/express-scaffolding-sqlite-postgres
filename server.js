@@ -23,9 +23,9 @@ const lastEndpointUsed = last => (_, res, next) => {
   next()
 }
 
+app.use(helmet())
 app.use(express.json())
 app.use(cors(corsOptions))
-app.use(helmet())
 
 app.get('/api', lastEndpointUsed('api'), (_, res) => {
   res.json({ server: 'up' })
