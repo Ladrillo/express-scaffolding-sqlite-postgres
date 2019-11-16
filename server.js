@@ -4,6 +4,10 @@ const helmet = require('helmet')
 const db = require('./database/dbConfig')
 const app = express()
 
+// var corsOptions = {
+//   origin: 'http://localhost:3000',
+// }
+
 app.use(express.json())
 app.use(cors())
 app.use(helmet())
