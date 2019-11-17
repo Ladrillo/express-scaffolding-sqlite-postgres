@@ -3,7 +3,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const session = require('express-session')
 const db = require('./database/dbConfig')
-const { secure, origin, domain } = require('./config/index')
+const { secure, origin } = require('./config/index')
 
 const app = express()
 
