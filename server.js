@@ -35,8 +35,8 @@ app.get('/api', (_, res) => {
     httpOnly: false,
     sameSite: 'None',
     secure,
-    // domain,
-    path: '/api',
+    domain,
+    path: '/',
   })
   res.json({ server: 'up' })
 })
