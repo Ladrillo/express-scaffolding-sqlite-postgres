@@ -29,7 +29,7 @@ const cookieConfig = {
   httpOnly: false,
   sameSite: 'None',
   secure,
-  domain,
+  // domain,
 }
 
 app.use(express.json())
