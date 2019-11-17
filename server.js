@@ -17,7 +17,7 @@ const cookieConfig = {
   httpOnly: false,
   sameSite: 'None',
   secure,
-  // domain,
+  domain,
 }
 
 const sessionConfig = {
