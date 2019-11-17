@@ -35,8 +35,8 @@ const cookieConfig = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
-app.use(session(sessionConfig))
-app.use(helmet())
+// app.use(session(sessionConfig))
+// app.use(helmet())
 
 app.get('/api', (_, res) => {
   res.cookie('lastEndpoint', 'api', cookieConfig)
