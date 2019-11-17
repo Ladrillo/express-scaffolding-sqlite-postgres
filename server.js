@@ -29,7 +29,7 @@ const cookieConfig = {
   httpOnly: false,
   sameSite: 'None',
   secure,
-  // domain,
+  domain,
 }
 
 app.use(helmet())
@@ -55,6 +55,7 @@ app.get('/api/roles', async (_, res) => {
 })
 
 app.get('/api/login', (req, res) => {
+  res.cookie('lastEndpoint', 'api-login', cookieConfig)
   req.session.user = { name: req.query.name }
   res.json({ user: req.query.name })
 })
