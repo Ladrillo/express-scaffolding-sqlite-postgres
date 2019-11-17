@@ -18,7 +18,7 @@ const sessionConfig = {
   cookie: {
     maxAge: 1000 * 60 * 60,
     secure,
-    httpOnly: false,
+    httpOnly: true,
   },
   resave: false,
   saveUninitialized: false,
@@ -26,8 +26,9 @@ const sessionConfig = {
 
 const cookieConfig = {
   maxAge: 1000 * 60 * 60,
+  // the JS can't read the cookie when [SPA] hits [API on different domain]
   httpOnly: false,
-  sameSite: 'None',
+  sameSite: 'None', // to prevent Chrome warning
   secure,
 }
 

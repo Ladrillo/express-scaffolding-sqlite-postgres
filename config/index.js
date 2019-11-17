@@ -14,7 +14,4 @@ module.exports = {
     'http://localhost:3000',
   ],
   secure: isProduction, // cookie only sent over https
-  domain: isProduction
-    ? 'herokuapp.com'
-    : 'localhost'
 }
