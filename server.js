@@ -29,8 +29,8 @@ const cookieConfig = {
   httpOnly: false,
   sameSite: 'None',
   secure,
-  domain,
-  path: '/'
+  // domain,
+  // path: '/'
 }
 
 app.use(cors(corsOptions))
