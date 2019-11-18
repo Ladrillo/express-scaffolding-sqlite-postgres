@@ -8,10 +8,11 @@ const { secure, origin } = require('./config/index')
 const app = express()
 
 var corsOptions = {
-  origin, // array of admissible origins
-  credentials: true,
+  origin, // Array of admissible origins
+  credentials: true, // Not needed for build week
 }
 
+// Not needed for build week
 const sessionConfig = {
   name: 'monkey',
   secret: 'keep it secret, keep it safe!',
@@ -24,6 +25,7 @@ const sessionConfig = {
   saveUninitialized: false,
 };
 
+// Not needed for build week
 const cookieConfig = {
   maxAge: 1000 * 60 * 60,
   // the JS can't read the cookie when [SPA] hits [API on different domain]
@@ -34,7 +36,7 @@ const cookieConfig = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
-app.use(session(sessionConfig))
+app.use(session(sessionConfig)) // Not needed for build week
 app.use(helmet())
 
 app.get('/api', (_, res) => {
