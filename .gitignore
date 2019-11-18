@@ -3,3 +3,4 @@ node_modules/
 .DS_Store
 .vscode
 development.db3
+testing.db3
