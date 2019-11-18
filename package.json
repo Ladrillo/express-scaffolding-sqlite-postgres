@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "migrate": "knex migrate:latest",
     "test": "jest"
   },
   "keywords": [],
